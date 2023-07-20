@@ -1,0 +1,62 @@
+2023-07-20 02:12:10,178 INFO    [logger.py, 188] going to run tta val after training False
+2023-07-20 02:12:10,178 INFO    [logger.py, 188] Run ID: 20230720_021210_e1__hrn_hr48_DCms_cs_epochs108_bs8 training
+2023-07-20 02:12:10,179 INFO    [logger.py, 188] available_devices 1
+2023-07-20 02:12:10,204 INFO    [logger.py, 188] Program will run on *****GPU-CUDA, device 0*****
+2023-07-20 02:12:10,204 INFO    [logger.py, 188] Empty cache after model.forward(): False
+2023-07-20 02:12:10,205 INFO    [logger.py, 188] *** setting cudnn.benchmark to True ***
+2023-07-20 02:12:10,205 INFO    [logger.py, 188] *** cudnn.enabled True
+2023-07-20 02:12:10,205 INFO    [logger.py, 188] *** cudnn.deterministic False
+2023-07-20 02:12:12,338 INFO    [logger.py, 188] loading pretrained hrnet
+2023-07-20 02:12:12,338 INFO    [logger.py, 188] checkpoint is at device cpu, will be moved to cuda:0 (= process_rank)
+2023-07-20 02:12:12,339 INFO    [logger.py, 188] Missing keys: []
+2023-07-20 02:12:12,389 INFO    [logger.py, 188] ** creating ms projector **
+2023-07-20 02:12:12,389 INFO    [logger.py, 188] * scale 0 feats: 48
+2023-07-20 02:12:12,389 INFO    [logger.py, 188] Projector creating conv layer, k_1/c_48/s_1
+2023-07-20 02:12:12,389 INFO    [logger.py, 188] Projector creating linear layer, k_1/c_256/s_1
+2023-07-20 02:12:12,390 INFO    [logger.py, 188] * scale 1 feats: 96
+2023-07-20 02:12:12,390 INFO    [logger.py, 188] Projector creating conv layer, k_1/c_96/s_1
+2023-07-20 02:12:12,390 INFO    [logger.py, 188] Projector creating linear layer, k_1/c_256/s_1
+2023-07-20 02:12:12,390 INFO    [logger.py, 188] * scale 2 feats: 192
+2023-07-20 02:12:12,390 INFO    [logger.py, 188] Projector creating conv layer, k_1/c_192/s_1
+2023-07-20 02:12:12,391 INFO    [logger.py, 188] Projector creating linear layer, k_1/c_256/s_1
+2023-07-20 02:12:12,391 INFO    [logger.py, 188] * scale 3 feats: 384
+2023-07-20 02:12:12,392 INFO    [logger.py, 188] Projector creating conv layer, k_1/c_384/s_1
+2023-07-20 02:12:12,393 INFO    [logger.py, 188] Projector creating linear layer, k_1/c_256/s_1
+2023-07-20 02:12:12,393 INFO    [logger.py, 188] added 4 projectors from [48, 96, 192, 384] to 256
+2023-07-20 02:12:20,505 INFO    [logger.py, 188] Using model 'HRNet' with backbone 'hrnet48' with output stride 4 : trainable parameters 70389184
+2023-07-20 02:12:20,570 INFO    [logger.py, 188] defining dcv2 ms loss with number of scales 4 and weights [1, 0.7, 0.4, 0.1]
+2023-07-20 02:12:20,571 INFO    [logger.py, 188] using cross scale contrast True
+2023-07-20 02:12:20,571 INFO    [logger.py, 188] defining dcv2 loss at scale 0
+2023-07-20 02:12:20,572 INFO    [logger.py, 188] defining dcv2 loss at scale 1
+2023-07-20 02:12:20,573 INFO    [logger.py, 188] defining dcv2 loss at scale 2
+2023-07-20 02:12:20,574 INFO    [logger.py, 188] defining dcv2 loss at scale 3
+2023-07-20 02:12:20,574 INFO    [logger.py, 188] using cross-scale contrast with detach_cs_deepest set to False, w_high_low: 1.0, w_high_mid: 1.0
+2023-07-20 02:12:20,575 INFO    [logger.py, 188] Loaded loss: CrossEntropyLoss, DenseContrastiveLossV2_ms rank : 0
+2023-07-20 02:12:20,575 INFO    [logger.py, 188] ------parsing transform list {}------
+2023-07-20 02:12:20,575 INFO    [logger.py, 188] RandomResize: 
+  scale_range: [0.5, 2] - aspect_range [0.9, 1.1]
+  probability: 1.0
+  target_size: [1024, 512]
+  padding: True : pad values im/lbl 0.0, 19
+2023-07-20 02:12:20,576 INFO    [logger.py, 188] ColorJitter(brightness=(0.6666666666666666, 1.5), contrast=(0.6666666666666666, 1.5), saturation=(0.6666666666666666, 1.5), hue=(-0.05, 0.05)) with p 1.0
+2023-07-20 02:12:20,577 INFO    [logger.py, 188] ----------------------------------
+2023-07-20 02:12:20,577 INFO    [logger.py, 188] ------parsing transform list {}------
+2023-07-20 02:12:20,577 INFO    [logger.py, 188] ----------------------------------
+2023-07-20 02:12:20,577 INFO    [logger.py, 188] Dataset transforms: ['ColorJitter', 'Normalize', 'FlipNP', 'RandomResize', 'RandomCropImgLbl']
+2023-07-20 02:12:20,631 INFO    [logger.py, 188] Cityscapes dataset train on [train] valid on [val]
+2023-07-20 02:12:20,632 INFO    [logger.py, 188] Dataset split created. Number of records training / validation: 002975 / 000500
+
+2023-07-20 02:12:20,632 INFO    [logger.py, 188] Dataloaders created. Batch size: 8
+              Number of workers: 18
+
+2023-07-20 02:12:20,633 INFO    [logger.py, 188] Training schedule created:
+2023-07-20 02:12:20,634 INFO    [logger.py, 188]     Epochs 0 to 107: train_loader
+2023-07-20 02:12:20,648 INFO    [logger.py, 188] *** lr_schedule: 'polynomial' over total steps 40068 with restarts @ [] batchwise_schedule True
+2023-07-20 02:12:20,656 INFO    [logger.py, 188] *** setting cudnn.benchmark to True ***
+2023-07-20 02:12:20,660 INFO    [logger.py, 188] ***** Training started *****
+
+2023-07-20 02:21:20,967 INFO    [logger.py, 188] ** Aprox. run t: 16.2 total /0.15 per epoch
+2023-07-20 02:23:12,505 INFO    [logger.py, 188] Epoch 000 - val loss: 1.40341 - miou:0.52 - flat:0.83- construction:0.45- object:0.52- nature:0.67- sky:0.85- human:0.56- vehicle:0.35
+2023-07-20 02:23:12,506 INFO    [logger.py, 188]             New best mIoU (tot / flat / construction / object / nature / sky / human / vehicle  ): 0.5249 0.8251 0.4544 0.5178 0.6712 0.8524 0.5581 0.3493 
+2023-07-20 02:23:12,507 INFO    [logger.py, 188]             New best validation loss: 1.40341
+2023-07-20 02:23:13,891 INFO    [logger.py, 188] Checkpoint saved: chkpt_best.pt
